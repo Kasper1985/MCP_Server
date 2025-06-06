@@ -2,7 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstMCP", "MyFirstMCP.csproj", "{E37BF9FE-DE84-A8D5-395B-9054C1205D01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMCP", "ConsoleMCP\ConsoleMCP.csproj", "{E37BF9FE-DE84-A8D5-395B-9054C1205D01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpMCP", "HttpMCP\MyFirstMCP.csproj", "{A12C3B4D-1234-5678-9ABC-DEF012345678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,6 +16,10 @@ Global
 		{E37BF9FE-DE84-A8D5-395B-9054C1205D01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E37BF9FE-DE84-A8D5-395B-9054C1205D01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E37BF9FE-DE84-A8D5-395B-9054C1205D01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12C3B4D-1234-5678-9ABC-DEF012345678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12C3B4D-1234-5678-9ABC-DEF012345678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12C3B4D-1234-5678-9ABC-DEF012345678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12C3B4D-1234-5678-9ABC-DEF012345678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
