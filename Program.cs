@@ -1,8 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging; // Ensure Host is available
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+//using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using MyFirstMCP; // Ensure Host is available
 
-var builder = Host.CreateApplicationBuilder(args);
+//var builder = Host.CreateApplicationBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
 builder.Logging.AddConsole(consoleLogOptions =>
 {
     // Configure all logs to go to stderr
@@ -11,7 +14,13 @@ builder.Logging.AddConsole(consoleLogOptions =>
 
 builder.Services
     .AddMcpServer()
-    .WithStdioServerTransport()
+    //.WithStdioServerTransport()
+    .WithHttpTransport()
     .WithToolsFromAssembly();
 
-await builder.Build().RunAsync();
+var app = builder.Build();
+
+app.MapMcp();
+
+await app.RunAsync("http://localhost:5000");
+//await builder.Build().RunAsync();
