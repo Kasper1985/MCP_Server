@@ -8,10 +8,6 @@ obj/
 *.userosscache
 *.sln.docstates
 
-# Visual Studio Code settings
-.vscode/
-!.vscode/mcp.json
-
 # Dotnet-specific
 project.lock.json
 project.fragment.lock.json

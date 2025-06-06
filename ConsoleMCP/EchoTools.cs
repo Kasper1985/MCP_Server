@@ -1,10 +1,10 @@
 using System.ComponentModel;
 using ModelContextProtocol.Server;
 
-namespace MyFirstMCP;
+namespace ConsoleMCP;
 
 [McpServerToolType]
-public static class EchoTool
+public class EchoTools
 {
     [McpServerTool, Description("Echoes the message back to the client.")]
     public static string Echo(string message) => $"Hello from C#: {message}";

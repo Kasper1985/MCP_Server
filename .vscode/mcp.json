@@ -1,7 +1,16 @@
 {
     "inputs": [],
     "servers": {
-        "MyHttpMCP": {
+        "ConsoleMCP": {
+            "type": "stdio",
+            "command": "dotnet",
+            "args": [
+                "run",
+                "--project",
+                "D:\\Xebia\\InnoDay\\MyFirstMCP\\ConsoleMCP\\ConsoleMCP.csproj"
+            ],
+        },
+        "HttpMCP": {
             "type": "http",
             "url": "http://localhost:5000"
         }
