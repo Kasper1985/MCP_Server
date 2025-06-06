@@ -16,7 +16,11 @@ builder.Services
     .AddMcpServer()
     //.WithStdioServerTransport()
     .WithHttpTransport()
-    .WithToolsFromAssembly();
+    //.WithToolsFromAssembly();
+    .WithTools<MonkeyTools>();
+
+builder.Services.AddHttpClient();
+builder.Services.AddSingleton<MonkeyService>();
 
 var app = builder.Build();
 

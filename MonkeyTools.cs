@@ -5,7 +5,7 @@ using ModelContextProtocol.Server;
 namespace MyFirstMCP;
 
 [McpServerToolType]
-public static class MonkeyTools
+public class MonkeyTools
 {
     [McpServerTool, Description("Get a list of monkeys.")]
     public static async Task<string> GetMonkeys(MonkeyService monkeyService)
