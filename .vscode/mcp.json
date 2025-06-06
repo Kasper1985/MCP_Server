@@ -1,0 +1,9 @@
+{
+    "inputs": [],
+    "servers": {
+        "MyHttpMCP": {
+            "type": "sse",
+            "url": "http://localhost:5000"
+        }
+    }
+}
