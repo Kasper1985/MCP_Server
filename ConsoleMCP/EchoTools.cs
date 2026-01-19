@@ -10,5 +10,10 @@ public class EchoTools
     public static string Echo(string message) => $"Hello from C#: {message}";
 
     [McpServerTool, Description("Echoes in reverse the message sent by the client.")]
-    public static string ReverseEcho(string message) => new([.. message.Reverse()]);
+    public static string ReverseEcho(string message)
+    {
+        var chars = message.ToCharArray();
+        Array.Reverse(chars);
+        return new string(chars);
+    }
 }

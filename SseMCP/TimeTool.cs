@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using Microsoft.VisualBasic;
 using ModelContextProtocol.Server;
 
 namespace SseMCP;
