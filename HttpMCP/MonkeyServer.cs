@@ -16,14 +16,10 @@ public class MonkeyService(IHttpClientFactory httpClientFactory)
         var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
         if (response.IsSuccessStatusCode)
         {
-            monkeyList = await response.Content.ReadFromJsonAsync(MonkeyContext.Default.ListMonkey) ?? [];
-        }
-        else
-        {
-            monkeyList = [];
+            monkeyList = await response.Content.ReadFromJsonAsync(MonkeyContext.Default.ListMonkey);
         }
 
-        return monkeyList;
+        return monkeyList ?? [];
     }
 
     public async Task<Monkey?> GetMonkey(string name)
