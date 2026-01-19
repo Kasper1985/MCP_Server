@@ -6,11 +6,11 @@ namespace MyFirstMCP;
 public class MonkeyService(IHttpClientFactory httpClientFactory)
 {
     private readonly HttpClient httpClient = httpClientFactory.CreateClient();
-    List<Monkey> monkeyList = [];
+    private List<Monkey>? monkeyList;
 
     public async Task<List<Monkey>> GetMonkeys()
     {
-        if (monkeyList?.Count > 0)
+        if (monkeyList is not null && monkeyList.Count > 0)
             return monkeyList;
 
         var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
@@ -18,8 +18,10 @@ public class MonkeyService(IHttpClientFactory httpClientFactory)
         {
             monkeyList = await response.Content.ReadFromJsonAsync(MonkeyContext.Default.ListMonkey) ?? [];
         }
-
-        monkeyList ??= [];
+        else
+        {
+            monkeyList = [];
+        }
 
         return monkeyList;
     }
